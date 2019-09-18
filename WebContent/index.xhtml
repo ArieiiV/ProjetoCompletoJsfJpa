@@ -45,6 +45,10 @@
 					<f:selectItem itemValue="PrimeFaces"></f:selectItem>
 					<f:selectItem itemValue="Jsf"></f:selectItem>
 			</h:selectManyMenu>
+			
+			<h:outputLabel value="Ativo: ">
+			<h:selectBooleanCheckbox value="#{pessoaBean.pessoa.ativo}"></h:selectBooleanCheckbox>
+			</h:outputLabel>
 
 			<h:outputLabel>
 				<h:panelGroup>
