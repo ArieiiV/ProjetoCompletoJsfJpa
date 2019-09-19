@@ -4,95 +4,22 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>Olá JSF</title>
+	<title>Login</title>
 </h:head>
 <h:body>
 
-	<h:form id="formPessoa">
-		<h:graphicImage height="50" width="80" value="/resources/img/sky.png" />
+	<h:form id="formLogin" style="margin-top:22%; margin-left:40%">
+		<h1>Realize o Login</h1>
 		<h:panelGrid columns="2">
-			<f:facet name="header">
-				<h:outputText value="Cadastro em Jsf"></h:outputText>
-			</f:facet>
-			<h:outputLabel value="Id:  "></h:outputLabel>
-			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true"></h:inputText>
+		
+			<h:outputLabel value="Login : "></h:outputLabel>
+			<h:inputText value="#{pessoaBean.pessoa.login}"></h:inputText>
+			
+			<h:outputLabel value="Senha : "></h:outputLabel>
+			<h:inputSecret value="#{pessoaBean.pessoa.senha}"></h:inputSecret>
 
-
-			<h:outputLabel value="Nome:  "></h:outputLabel>
-			<h:inputText value="#{pessoaBean.pessoa.nome}"></h:inputText>
-
-
-			<h:outputLabel value="Sobrenome:  "></h:outputLabel>
-			<h:inputText value="#{pessoaBean.pessoa.sobreNome}"></h:inputText>
-
-
-			<h:outputLabel value="Idade:  "></h:outputLabel>
-			<h:inputText value="#{pessoaBean.pessoa.idade}"></h:inputText>
-
-			<h:outputLabel value="Sexo"></h:outputLabel>
-			<h:selectOneMenu id="campoSexo" value="#{pessoaBean.pessoa.sexo}" required="false">
-				<f:selectItem itemValue="Não especificado"
-					itemLabel="[---Selecione---]" noSelectionOption="true"></f:selectItem>
-				<f:selectItem itemValue="M" itemLabel="Sexo Masculino"></f:selectItem>
-				<f:selectItem itemValue="F" itemLabel="Sexo Feminino"></f:selectItem>
-			</h:selectOneMenu>
-
-			<h:outputLabel value="Frameworks"></h:outputLabel>
-			<h:selectManyMenu id="campoFramework" style="height:150px;" value="#{pessoaBean.pessoa.frameworks}">
-					<f:selectItem itemValue="Hibernate"></f:selectItem>
-					<f:selectItem itemValue="Spring Mvc"></f:selectItem>
-					<f:selectItem itemValue="Jpa"></f:selectItem>
-					<f:selectItem itemValue="PrimeFaces"></f:selectItem>
-					<f:selectItem itemValue="Jsf"></f:selectItem>
-			</h:selectManyMenu>
-
-			<h:outputLabel>
-				<h:panelGroup>
-					<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"></h:commandButton>
-
-					<h:commandButton value="Novo" action="#{pessoaBean.novo}"></h:commandButton>
-
-					<h:commandButton value="Deletar" action="#{pessoaBean.deletar}"></h:commandButton>
-				</h:panelGroup>
-			</h:outputLabel>
-
-
+			<h:commandButton value="Acessar" action="#{pessoaBean.logar}"></h:commandButton>
 		</h:panelGrid>
-
-		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="3">
-			<f:facet name="header">Lista de pessoas cadastradas</f:facet>
-			<h:column>
-				<f:facet name="header">Id</f:facet>
-				<h:outputText value="#{pessoa.id}">
-				</h:outputText>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{pessoa.nome}">
-				</h:outputText>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Sobrenome</f:facet>
-				<h:outputText value="#{pessoa.sobreNome}">
-				</h:outputText>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Ação</f:facet>
-				<h:commandLink value="Editar">
-					<f:setPropertyActionListener value="#{pessoa}"
-						target="#{pessoaBean.pessoa}"></f:setPropertyActionListener>
-				</h:commandLink>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<h:commandLink value="Excluir" action="#{pessoaBean.deletar}">
-					<f:setPropertyActionListener value="#{pessoa}"
-						target="#{pessoaBean.pessoa}"></f:setPropertyActionListener>
-				</h:commandLink>
-			</h:column>
-
-
-
-		</h:dataTable>
-
 	</h:form>
 
 </h:body>
