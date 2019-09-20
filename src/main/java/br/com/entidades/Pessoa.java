@@ -109,7 +109,6 @@ public class Pessoa implements Serializable {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
 	
 	public String getSexo() {
 		return sexo;
