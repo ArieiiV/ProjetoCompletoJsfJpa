@@ -6,6 +6,7 @@
 	<persistence-unit name="JPA_HIBERNATE">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.com.entidades.Pessoa</class>
+		<class>br.com.entidades.Lancamento</class>
 		<properties>
 		<!-- DADOS DE CONEXAO COM O BANCO -->
 			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
@@ -16,7 +17,7 @@
 			
 			<property name="hibernate.connection.username" value="root"/>
 			
-			<property name="hibernate.connection.password" value="Veyance@16"/>
+			<property name="hibernate.connection.password" value="root"/>
 			
 			<property name="hibernate.show_sql" value="true"/>
 			
